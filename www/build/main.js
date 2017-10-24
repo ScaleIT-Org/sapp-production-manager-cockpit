@@ -62,67 +62,11 @@ var HomePage = (function () {
     HomePage.prototype.ionViewDidLoad = function () {
         this.barChart = new __WEBPACK_IMPORTED_MODULE_2_chart_js__["Chart"](this.barCanvas.nativeElement, {
             type: 'bar',
-            data: {
-                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                datasets: [
-                    {
-                        label: "Lane 1",
-                        data: [3, 7, 4, 2, 6, 1],
-                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                        borderColor: 'rgba(255,99,132,1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: "Lane 2",
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
-                        data: [4, 3, 5, 7, 2, 5],
-                        borderWidth: 1
-                    },
-                    {
-                        label: "Lane 3",
-                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
-                        borderColor: 'rgba(255, 206, 86, 1)',
-                        data: [7, 2, 6, 4, 5, 2],
-                        borderWidth: 1
-                    },
-                    {
-                        label: "Lane 4",
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        data: [7, 2, 6, 4, 5, 2],
-                        borderWidth: 1
-                    },
-                    {
-                        label: "Lane 5",
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(153, 102, 255, 1)',
-                        data: [7, 2, 6, 4, 5, 2],
-                        borderWidth: 1
-                    }
-                    /*backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],*/
-                ]
-            },
             options: {
                 scales: {
                     yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false
                             }
                         }]
                 }
@@ -137,7 +81,7 @@ __decorate([
 ], HomePage.prototype, "barCanvas", void 0);
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Production Manager Cockpit\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  	<ion-card>\n	  <ion-card-header>\n	  	First Pass Yield\n	  </ion-card-header>\n	  <ion-card-content>\n	    <canvas #barCanvas></canvas>\n	  </ion-card-content>\n	</ion-card>\n\n	<ion-card>\n		<ion-card-header>\n			DPM\n		</ion-card-header>\n	  <ion-card-content>\n			DPM Line 1: 0 <br>\n			DPM Line 2: 30,9 <br>\n			DPM Line 3: 25000 <br>\n			DPM Line 4: 1233,33 <br>\n			DPM Line 5: 929 <br>\n	  </ion-card-content>\n	</ion-card>\n</ion-content>'/*ion-inline-end:"/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Production Manager Cockpit\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-card>\n		<ion-card-content text-right>\n				<input type="number" name="interval" value="1" min="1" max="60">\n				<input type="checkbox" name="autorefresh" value="on"> autorefresh(min) \n				<button ion-button round margin-left id="refresh"><span class="glyphicon glyphicon-refresh"></span></button>\n		</ion-card-content>\n	</ion-card>\n\n  <ion-card>\n	  <ion-card-header>\n	  	First Pass Yield\n	  </ion-card-header>\n	  <ion-card-content style="height:50vh;">\n	    <canvas id="barCanvas" #barCanvas></canvas>\n	  </ion-card-content>\n	</ion-card>\n\n	<ion-card>\n		<ion-card-header>\n			DPM\n		</ion-card-header>\n	  <ion-card-content>\n			<ul id="DPM"></ul>\n	  </ion-card-content>\n	</ion-card>\n</ion-content>'/*ion-inline-end:"/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], HomePage);

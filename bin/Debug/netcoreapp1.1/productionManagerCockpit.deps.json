@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "fabf107ef772c649c159b84076d339a514a5f68c"
+    "signature": "9b1942c59aac0ec005f9f5cf4a75893f2ee591b5"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
       "productionmanagercockpit/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore": "1.1.1",
+          "Microsoft.AspNetCore.WebSockets": "1.0.1",
           "Microsoft.Extensions.Configuration": "1.1.1",
           "Microsoft.Extensions.Configuration.Xml": "1.1.1",
           "Microsoft.NETCore.App": "1.1.2",
@@ -298,6 +299,19 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
+      "microsoft.aspnetcore.websockets/1.0.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.1",
+          "Microsoft.Extensions.Options": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.dll": {}
         }
       },
       "microsoft.aspnetcore.webutilities/1.1.1": {
@@ -2592,6 +2606,13 @@
       "sha512": "sha512-TSld1znNokVvfRtUHTpCy3tMdJ4wdWTnVOUpoDB23SvqNiP5sJB5Hn8ZdaolfPoDYeFCf9YRq4keo4Rj+cIy3g==",
       "path": "microsoft.aspnetcore.staticfiles/1.1.1",
       "hashPath": "microsoft.aspnetcore.staticfiles.1.1.1.nupkg.sha512"
+    },
+    "microsoft.aspnetcore.websockets/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D+s9MJUN9dwV3GbVVey4Maf8IRiGOzuz79Ls5Nk6dHgbvPer6BFZyeQBe3x/jm1IM0ePV6gzR5JHd+IDkY1RIw==",
+      "path": "microsoft.aspnetcore.websockets/1.0.1",
+      "hashPath": "microsoft.aspnetcore.websockets.1.0.1.nupkg.sha512"
     },
     "microsoft.aspnetcore.webutilities/1.1.1": {
       "type": "package",

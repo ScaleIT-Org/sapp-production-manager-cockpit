@@ -1,47 +1,47 @@
 {
   "fpyLine1": {
-    "Sunday": 0.9,
-    "Monday": 0.9,
-    "Tuesday": 0.9,
-    "Wednesday": 0.9,
-    "Thursday": 0.9,
-    "Friday": 0.9
+    "Sunday": 90.9,
+    "Monday": 92.9,
+    "Tuesday": 93.9,
+    "Wednesday": 91.9,
+    "Thursday": 90.9,
+    "Friday": 91.9
   },
   "fpyLine2": {
-    "Sunday": 0.9,
-    "Monday": 0.9,
-    "Tuesday": 0.9,
-    "Wednesday": 0.9,
-    "Thursday": 0.9,
-    "Friday": 0.9
+    "Sunday": 93.9,
+    "Monday": 95.9,
+    "Tuesday": 91.9,
+    "Wednesday": 98.9,
+    "Thursday": 92.9,
+    "Friday": 91.9
   },
   "fpyLine3": {
-    "Sunday": 0.9,
-    "Monday": 0.9,
-    "Tuesday": 0.9,
-    "Wednesday": 0.9,
-    "Thursday": 0.9,
-    "Friday": 0.9
+    "Sunday": 96.9,
+    "Monday": 92.9,
+    "Tuesday": 90.9,
+    "Wednesday": 91.9,
+    "Thursday": 97.9,
+    "Friday": 94.9
   },
   "fpyLine4": {
-    "Sunday": 0.9,
-    "Monday": 0.9,
-    "Tuesday": 0.9,
-    "Wednesday": 0.9,
-    "Thursday": 0.9,
-    "Friday": 0.9
+    "Sunday": 90.9,
+    "Monday": 90.9,
+    "Tuesday": 90.9,
+    "Wednesday": 90.9,
+    "Thursday": 90.9,
+    "Friday": 90.9
   },
   "fpyLine5": {
-    "Sunday": 0.9,
-    "Monday": 0.9,
-    "Tuesday": 0.9,
-    "Wednesday": 0.9,
-    "Thursday": 0.9,
-    "Friday": 0.9
+    "Sunday": 90.9,
+    "Monday": 90.9,
+    "Tuesday": 90.9,
+    "Wednesday": 90.9,
+    "Thursday": 90.9,
+    "Friday": 90.9
   },
-  "dpmLine1": 0.9,
-  "dpmLine2": 0.9,
-  "dpmLine3": 0.9,
-  "dpmLine4": 0.9,
-  "dpmLine5": 0.9
+  "dpmLine1": 90.9,
+  "dpmLine2": 90.9,
+  "dpmLine3": 92.9,
+  "dpmLine4": 90.9,
+  "dpmLine5": 90.9
 }

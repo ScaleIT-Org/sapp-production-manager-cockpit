@@ -17,26 +17,7 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.ionViewDidLoad = function () {
         this.barChart = new Chart(this.barCanvas.nativeElement, {
             type: 'bar',
-            data: {
-                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                datasets: [
-                    {
-                        label: "Harpo",
-                        backgroundColor: "blue",
-                        data: [3, 7, 4]
-                    },
-                    {
-                        label: "Chico",
-                        backgroundColor: "red",
-                        data: [4, 3, 5]
-                    },
-                    {
-                        label: "Groucho",
-                        backgroundColor: "green",
-                        data: [7, 2, 6]
-                    }
-                ]
-            },
+            
             options: {
                 scales: {
                     yAxes: [{

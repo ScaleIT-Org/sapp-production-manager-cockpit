@@ -8,12 +8,20 @@
 
 <ion-content padding>
 
-  	<ion-card>
+	<ion-card>
+		<ion-card-content text-right>
+				<input type="number" name="interval" value="1" min="1" max="60">
+				<input type="checkbox" name="autorefresh" value="on"> autorefresh(min) 
+				<button ion-button round margin-left id="refresh"><span class="glyphicon glyphicon-refresh"></span></button>
+		</ion-card-content>
+	</ion-card>
+
+  <ion-card>
 	  <ion-card-header>
 	  	First Pass Yield
 	  </ion-card-header>
-	  <ion-card-content>
-	    <canvas #barCanvas></canvas>
+	  <ion-card-content style="height:50vh;">
+	    <canvas id="barCanvas" #barCanvas></canvas>
 	  </ion-card-content>
 	</ion-card>
 
@@ -22,11 +30,7 @@
 			DPM
 		</ion-card-header>
 	  <ion-card-content>
-			DPM Line 1: 0 <br>
-			DPM Line 2: 30,9 <br>
-			DPM Line 3: 25000 <br>
-			DPM Line 4: 1233,33 <br>
-			DPM Line 5: 929 <br>
+			<ul id="DPM"></ul>
 	  </ion-card-content>
 	</ion-card>
 </ion-content>
