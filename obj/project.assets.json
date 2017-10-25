@@ -527,6 +527,19 @@
           "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
+      "Microsoft.Extensions.Configuration.CommandLine/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.EnvironmentVariables/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -3517,6 +3530,17 @@
         "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.xml",
         "microsoft.extensions.configuration.binder.1.1.1.nupkg.sha512",
         "microsoft.extensions.configuration.binder.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.CommandLine/1.1.1": {
+      "sha512": "fu87SzfOB1qRBH+IOZ3boAFOWHm7Xrhg791ibHm9BBEM8pRJWv6Anwqd+aUsSto9Fpid61czSFI6E/SIaQCAQA==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.commandline/1.1.1",
+      "files": [
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.xml",
+        "microsoft.extensions.configuration.commandline.1.1.1.nupkg.sha512",
+        "microsoft.extensions.configuration.commandline.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/1.1.1": {
@@ -8831,6 +8855,7 @@
       "Microsoft.AspNetCore >= 1.1.1",
       "Microsoft.AspNetCore.WebSockets >= 1.0.1",
       "Microsoft.Extensions.Configuration >= 1.1.1",
+      "Microsoft.Extensions.Configuration.CommandLine >= 1.1.1",
       "Microsoft.Extensions.Configuration.xml >= 1.1.1",
       "Microsoft.NETCore.App >= 1.1.2",
       "System.Json >= 4.4.0",
@@ -8880,6 +8905,10 @@
             "version": "1.0.1"
           },
           "Microsoft.Extensions.Configuration": {
+            "target": "Package",
+            "version": "1.1.1"
+          },
+          "Microsoft.Extensions.Configuration.CommandLine": {
             "target": "Package",
             "version": "1.1.1"
           },

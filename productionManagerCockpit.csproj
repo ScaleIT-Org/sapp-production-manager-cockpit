@@ -10,6 +10,7 @@
     <PackageReference Include="microsoft.aspnetcore.staticfiles" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="1.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.xml" Version="1.1.1" />
     <PackageReference Include="System.Json" Version="4.4.0" />
   </ItemGroup>
