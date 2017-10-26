@@ -80,7 +80,7 @@
 	checkbox.addEventListener('change', function() {
 		if(this.checked) {
 				console.log("AutoRefresh On !");
-				refreshIntervall = setInterval(function(){ autoRefresh() }, 1000);
+				refreshIntervall = setInterval(function(){ autoRefresh() },interval.value*60*1000);
 		} else {
 			console.log("AutoRefresh Off !");
 			clearInterval(refreshIntervall);
