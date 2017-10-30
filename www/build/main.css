@@ -25206,3 +25206,11 @@ ion-navbar.toolbar {
 .ios page-home ion-card-header, .md page-home ion-card-header {
   font-weight: bold;
 }
+
+.ios page-home .button, .md page-home .button {
+  background: gray;
+}
+
+.ios page-home .button.active, .md page-home .button.active {
+  background: #488aff;
+}

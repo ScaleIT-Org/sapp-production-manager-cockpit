@@ -24,7 +24,7 @@
 		<ion-card-content text-right>
 				<input id="interval" type="number" name="interval" value="1" min="1" max="60">
 				<input id="checkbox" type="checkbox" name="autorefresh" value="on"> autorefresh(min) 
-				<button ion-button round margin-left id="refresh"><span class="glyphicon glyphicon-refresh"></span></button>
+				<button ion-button class="active" round margin-left id="refresh"><span class="glyphicon glyphicon-refresh"></span></button>
 		</ion-card-content>
 	</ion-card>
 
@@ -48,12 +48,27 @@
 </ion-content>
 
 <ion-footer style=" background-color: lightgray; text-align: center; justify-content: center; align-items: center;">
-		<ion-toolbar transparent>
+		<ion-toolbar id="footer" transparent>
 			Lines:
-			<button ion-button>1</button>
-			<button ion-button>2</button>
-			<button ion-button>3</button>
-			<button ion-button>4</button>
-			<button ion-button>5</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">1</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">2</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">3</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">4</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">5</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">6</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">7</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">8</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">9</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">10</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">11</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">12</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">13</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">14</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">15</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">16</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">17</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">18</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">19</button>
+			<button ion-button class="active" onclick="toggleLine(this)" style="display:none;">20</button>
 		</ion-toolbar>
 	</ion-footer>

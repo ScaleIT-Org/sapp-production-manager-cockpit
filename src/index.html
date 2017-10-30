@@ -63,6 +63,7 @@
 				!init ? updateChart(jsonObject) : null;
 				init = false;
 				updateDPM(jsonObject);
+				updateButtonFooter(jsonObject);
 			};
 			socket.onerror = function(event) {
 					console.log("error: " + event.data);
@@ -76,8 +77,8 @@
 	var refreshIntervall;
 	checkbox.addEventListener('change', function() {
 		if(this.checked) {
-				console.log("AutoRefresh On !");
-				refreshIntervall = setInterval(function(){ autoRefresh() },interval.value*60*1000);
+			console.log("AutoRefresh On !");
+			refreshIntervall = setInterval(function(){ autoRefresh() },/*interval.value*60*/1000);
 		} else {
 			console.log("AutoRefresh Off !");
 			clearInterval(refreshIntervall);
@@ -141,13 +142,16 @@
 			},
 				options: {
 					maintainAspectRatio: false,
-						scales: {
-								yAxes: [{
-										ticks: {
-												beginAtZero:false
-										}
-								}]
-						}
+					scales: {
+							yAxes: [{
+									ticks: {
+											beginAtZero:false
+									}
+							}]
+					},
+					legend: {
+                        onClick: (e) => e.stopPropagation()
+                    }
 				}
 		});
 	} 
@@ -170,8 +174,8 @@
 			if (key.startsWith("fpyLine")){
 				dataset.push({label: key,
 							data: [data[key].Sunday,data[key].Monday,data[key].Tuesday,data[key].Wednesday,data[key].Thursday,data[key].Friday],
-							backgroundColor: backgroundColor[i],
-							borderColor: borderColor[i],
+							backgroundColor: backgroundColor[i%8],
+							borderColor: borderColor[i%8],
 							borderWidth: 1});
 				i++
 			}
@@ -188,6 +192,91 @@
 			}
 		}
 	}
+
+	function updateButtonFooter(data){
+		var lines = []
+		for (var key in data) {
+			if (key.startsWith("fpyLine")){
+				lines.push(key.substring(7));
+			}
+		}
+		var footer = document.getElementById("footer");
+		//Get Button Div
+		for (var i = 0; i < footer.childNodes.length; i++) {
+			if (footer.childNodes[i].className == "toolbar-content toolbar-content-md") {
+			var div = footer.childNodes[i];
+				for (var j = 0; j < div.childNodes.length; j++) {
+					if(div.childNodes[j].nodeType === 1) {
+						if(lines.indexOf(div.childNodes[j].textContent) > -1){
+							div.childNodes[j].style.display = null;
+						} else {
+							div.childNodes[j].style.display = 'none';
+						}
+					}
+				}
+			break;
+			}        
+		}
+	}
+
+	function toggleLine(e){
+		e.classList.toggle('active');
+		for (var i in myChart.data.datasets) {
+			if(myChart.data.datasets[i].label.substring(7) === e.firstChild.textContent){
+				myChart.data.datasets[i].hidden = !myChart.data.datasets[i].hidden;
+			}
+		}
+		myChart.update();
+	}
+	
+	var json = {
+  "fpyLine1": {
+    "Sunday": 90.9,
+    "Monday": 92.9,
+    "Tuesday": 93.9,
+    "Wednesday": 91.9,
+    "Thursday": 90.9,
+    "Friday": 91.9
+  },
+  "fpyLine2": {
+    "Sunday": 93.9,
+    "Monday": 95.9,
+    "Tuesday": 91.9,
+    "Wednesday": 98.9,
+    "Thursday": 92.9,
+    "Friday": 91.9
+  },
+  "fpyLine3": {
+    "Sunday": 96.9,
+    "Monday": 92.9,
+    "Tuesday": 90.9,
+    "Wednesday": 91.9,
+    "Thursday": 97.9,
+    "Friday": 94.9
+  },
+  "fpyLine4": {
+    "Sunday": 90.9,
+    "Monday": 90.9,
+    "Tuesday": 90.9,
+    "Wednesday": 90.9,
+    "Thursday": 90.9,
+    "Friday": 90.9
+  },
+  "fpyLine5": {
+    "Sunday": 90.9,
+    "Monday": 90.9,
+    "Tuesday": 90.9,
+    "Wednesday": 90.9,
+    "Thursday": 90.9,
+    "Friday": 90.9
+  },
+  "dpmLine1": 90.9,
+  "dpmLine2": 90.9,
+  "dpmLine3": 92.9,
+  "dpmLine4": 90.9,
+  "dpmLine5": 92.9
+};
+updateButtonFooter(json);
 
 	function autoRefresh() {
 		socket.send("autoRefresh");
