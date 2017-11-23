@@ -78,10 +78,10 @@
 	var checkbox = document.getElementById("checkbox"); 
 	var interval = document.getElementById("interval");
 	var refreshIntervall;
-	checkbox.addEventListener('change', function() {
+	/*checkbox.addEventListener('change', function() {
 		if(this.checked) {
 			console.log("AutoRefresh On !");
-			refreshIntervall = setInterval(function(){ autoRefresh() },/*interval.value*60*/1000);
+			refreshIntervall = setInterval(function(){ autoRefresh() },interval.value*60);
 		} else {
 			console.log("AutoRefresh Off !");
 			clearInterval(refreshIntervall);
@@ -90,7 +90,7 @@
 	button.addEventListener("click", function(event) {
 		console.log("Refresh ...");
 		socket.send("refresh");
-	});
+	});*/
 
 	function appendItem(list, message) {
 			var item = document.createElement("li");
@@ -137,24 +137,54 @@
 		var canvas = document.getElementById("barCanvas");
 		var ctx = canvas.getContext('2d');
 
+		Chart.pluginService.register({
+			afterDraw: function(chart) {
+				if (typeof chart.config.options.lineAt != 'undefined') {
+					var lineAt = chart.config.options.lineAt;
+					var ctxPlugin = chart.chart.ctx;
+					var xAxe = chart.scales[chart.config.options.scales.xAxes[0].id];
+					var yAxe = chart.scales[chart.config.options.scales.yAxes[0].id];
+					ctxPlugin.strokeStyle = "red";
+					ctxPlugin.beginPath();
+					lineAt = yAxe.getPixelForValue(lineAt);
+					ctxPlugin.moveTo(xAxe.left, lineAt);
+					ctxPlugin.lineTo(xAxe.right, lineAt);
+					ctxPlugin.stroke();
+				}
+			}
+		});
+
 		myChart = new Chart(ctx, {
 				type: 'bar',
 				data: {
 					labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 					datasets: dataset
-			},
+				},
 				options: {
-					maintainAspectRatio: false,
+					lineAt: data["fpyTol"].Line1,
 					scales: {
-							yAxes: [{
-									ticks: {
-											beginAtZero:false
-									}
-							}]
+						yAxes: [{
+							ticks: {
+								beginAtZero:false,
+								min: data["fpyTol"].Line1 - 5
+							}
+						}]
 					},
+					maintainAspectRatio: false,
 					legend: {
-                        onClick: (e) => e.stopPropagation()
-                    }
+						onClick: (e) => e.stopPropagation(),
+						position: 'bottom',
+						labels: {
+							filter: function(legendItem, chartData) {
+								// Remove legend entry if line is not selected
+								if(legendItem.hidden === false ){
+									return true;
+								} else {
+									return false;
+								}
+							}
+						}
+					}
 				}
 		});
 	} 
@@ -175,10 +205,25 @@
 		var i = 0;
 		for (var key in data) {
 			if (key.startsWith("fpyLine")){
+				
+				//Change Line Color to Red if it is less then Tolerance
+				var tempBoderColor = [];
+				var tempBackgroundColor = [];
+				var j = 0;
+				for (var day in data[key]) {
+					if(data[key][day] <= data["fpyTol"].Line1){
+						tempBoderColor.push('rgba(255, 0, 0, 1)') ;
+						tempBackgroundColor.push('rgba(255, 0, 0, 0.2)') ;
+					} else {
+						tempBoderColor.push(borderColor[i%8]);
+						tempBackgroundColor.push(backgroundColor[i%8]);
+					}
+				j++;
+				}
 				dataset.push({label: key,
 							data: [data[key].Sunday,data[key].Monday,data[key].Tuesday,data[key].Wednesday,data[key].Thursday,data[key].Friday],
-							backgroundColor: backgroundColor[i%8],
-							borderColor: borderColor[i%8],
+							backgroundColor: tempBackgroundColor,
+							borderColor: tempBoderColor,
 							borderWidth: 1});
 				i++
 			}
@@ -231,55 +276,6 @@
 		}
 		myChart.update();
 	}
-	
-	var json = {
-  "fpyLine1": {
-    "Sunday": 90.9,
-    "Monday": 92.9,
-    "Tuesday": 93.9,
-    "Wednesday": 91.9,
-    "Thursday": 90.9,
-    "Friday": 91.9
-  },
-  "fpyLine2": {
-    "Sunday": 93.9,
-    "Monday": 95.9,
-    "Tuesday": 91.9,
-    "Wednesday": 98.9,
-    "Thursday": 92.9,
-    "Friday": 91.9
-  },
-  "fpyLine3": {
-    "Sunday": 96.9,
-    "Monday": 92.9,
-    "Tuesday": 90.9,
-    "Wednesday": 91.9,
-    "Thursday": 97.9,
-    "Friday": 94.9
-  },
-  "fpyLine4": {
-    "Sunday": 90.9,
-    "Monday": 90.9,
-    "Tuesday": 90.9,
-    "Wednesday": 90.9,
-    "Thursday": 90.9,
-    "Friday": 90.9
-  },
-  "fpyLine5": {
-    "Sunday": 90.9,
-    "Monday": 90.9,
-    "Tuesday": 90.9,
-    "Wednesday": 90.9,
-    "Thursday": 90.9,
-    "Friday": 90.9
-  },
-  "dpmLine1": 90.9,
-  "dpmLine2": 90.9,
-  "dpmLine3": 92.9,
-  "dpmLine4": 90.9,
-  "dpmLine5": 92.9
-};
-updateButtonFooter(json);
 
 	function autoRefresh() {
 		socket.send("autoRefresh");

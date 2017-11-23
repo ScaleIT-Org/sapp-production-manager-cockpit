@@ -18,7 +18,7 @@
   "fpyLine3": {
     "Sunday": 96.9,
     "Monday": 92.9,
-    "Tuesday": 90.9,
+    "Tuesday": 88.9,
     "Wednesday": 91.9,
     "Thursday": 97.9,
     "Friday": 94.9
@@ -38,6 +38,13 @@
     "Wednesday": 90.9,
     "Thursday": 90.9,
     "Friday": 90.9
+  },
+  "fpyTol": {
+    "Line1": 90.0,
+    "Line2": 0.8,
+    "Line3": 0.8,
+    "Line4": 0.8,
+    "Line5": 0.8
   },
   "dpmLine1": 90.9,
   "dpmLine2": 90.9,
