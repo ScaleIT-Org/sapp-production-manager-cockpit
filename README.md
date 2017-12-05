@@ -25,3 +25,11 @@
 ![S1](https://projects.teco.edu/projects/scaleit-ap2/repository/production-manager-cockpit/revisions/master/entry/SCREENSHOTS/Screenshot%20from%202017-10-30%2012-54-00.png)
 ![S2](https://projects.teco.edu/projects/scaleit-ap2/repository/production-manager-cockpit/revisions/master/entry/SCREENSHOTS/Screenshot%20from%202017-10-30%2012-54-59.png)
 ![S3](https://projects.teco.edu/projects/scaleit-ap2/repository/production-manager-cockpit/revisions/master/entry/SCREENSHOTS/Screenshot%20from%202017-10-30%2012-57-20.png)
+
+## Learning Material
+
+Reactive Manifesto: https://www.reactivemanifesto.org/
+
+Reactive Programming: https://gist.github.com/staltz/868e7e9bc2a7b8c1f754
+
+Ionic Presentation: http://ionicframework.com/present-ionic/slides/#/26
