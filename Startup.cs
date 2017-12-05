@@ -22,7 +22,7 @@ namespace productionManagerCockpit
 
             if (env.IsDevelopment())
             {
-            app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();
             }
 
             app.UseDefaultFiles();

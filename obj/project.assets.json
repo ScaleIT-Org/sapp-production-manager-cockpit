@@ -8868,16 +8868,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/productionManagerCockpit.csproj",
+      "projectUniqueName": "/home/kuhno92/Downloads/hiwi/productionManagerCockpit/productionManagerCockpit.csproj",
       "projectName": "productionManagerCockpit",
-      "projectPath": "/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/productionManagerCockpit.csproj",
-      "outputPath": "/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/obj/",
+      "projectPath": "/home/kuhno92/Downloads/hiwi/productionManagerCockpit/productionManagerCockpit.csproj",
+      "outputPath": "/home/kuhno92/Downloads/hiwi/productionManagerCockpit/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/productionManagerCockpit.dll": "/home/kuhno92/Downloads/hiwi/test/productionManagerCockpit/bin/placeholder/netcoreapp1.1/productionManagerCockpit.dll"
+        "lib/netcoreapp1.1/productionManagerCockpit.dll": "/home/kuhno92/Downloads/hiwi/productionManagerCockpit/bin/placeholder/netcoreapp1.1/productionManagerCockpit.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {

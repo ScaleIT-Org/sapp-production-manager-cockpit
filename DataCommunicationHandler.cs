@@ -31,7 +31,7 @@ namespace DataCommunication
             
             var socketId = WebSocketConnectionManager.GetId(socket);
 
-            //Read datfile
+            //Read datafile
             var file = File.OpenText(dataPath);
             string jsonString = file.ReadToEnd();
 
