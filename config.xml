@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <!--<datasource>/home/kuhno92/Downloads/hiwi/productionManagerCockpit/smdQualityData.json</datasource>-->
-    <datasource>/app/smdQualityData.json</datasource>
-</configuration>
