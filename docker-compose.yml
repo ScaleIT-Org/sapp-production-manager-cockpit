@@ -1,6 +1,7 @@
 version: '2' 
 services:
     pmc:
+        image: scaleit-app-pool.ondics.de:5000/scaleit-app-pool/sapp-production-manager-cockpit:1.0
         build: Domain Software/PMC/.
         ports:
-          - "5002:5002"
+          - "49570:5002"
