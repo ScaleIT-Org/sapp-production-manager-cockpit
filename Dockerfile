@@ -40,7 +40,6 @@ EXPOSE 5050
 # Copy from build stage
 WORKDIR /app
 COPY --from=build-env /app/out ./
-RUN ls
 
 # using array notation causes node to be PID1 and will not exit properly. Without the array notation the shell forwards the sigterm correctly. 
 ENTRYPOINT ["dotnet", "productionManagerCockpit.dll"]
